@@ -4,7 +4,7 @@
   "main": "src/server.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/src/server.js",
+    "start": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register dist/server.js",
     "dev": "nodemon",
     "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "eslint \"src/**/*.ts\" --fix --cache",
@@ -21,7 +21,11 @@
       "pre-commit": "lint-staged"
     }
   },
+  "dependencies": {
+    "tsconfig-paths": "^4.2.0"
+  },
   "devDependencies": {
+    "@types/node": "^20.7.2",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
     "eslint": "^8.50.0",
