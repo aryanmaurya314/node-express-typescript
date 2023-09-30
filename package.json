@@ -1,0 +1,44 @@
+{
+  "name": "node-express-typescript",
+  "version": "1.0.0",
+  "main": "src/server.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register dist/server.js",
+    "dev": "nodemon",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint:fix": "eslint \"src/**/*.ts\" --fix --cache",
+    "format": "prettier --write \"src/**/*.{ts,json}\""
+  },
+  "lint-staged": {
+    "src/**/*.{ts,json}": [
+      "yarn lint:fix",
+      "yarn format"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "tsconfig-paths": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.7.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "repository": "https://github.com/aryanmaurya314/node-express-typescript.git",
+  "author": "Aryan Maurya <aryanmaurya314@gmail.com>",
+  "license": "MIT"
+}

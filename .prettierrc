@@ -1,0 +1,21 @@
+{
+  "trailingComma": "none",
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "overrides": [
+    {
+      "files": "src/**/*.ts",
+      "options": {
+        "parser": "typescript"
+      }
+    },
+    {
+      "files": "src/**/*.json",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}
