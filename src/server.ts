@@ -7,16 +7,17 @@ process.on('uncaughtException', (err) => {
 });
 
 import app from './app';
+import { dbInstance } from './dbContext';
 
 const port = +(process.env.PORT ?? '3000');
 
-const server = app.listen(port, () => {
-  logger.info(`App is running at http://localhost:${port} in ${process.env.NODE_ENV} mode.`);
+dbInstance.connect().then(() => {
+  app.listen(port, () => {
+    logger.info(`App is running at http://localhost:${port} in ${process.env.NODE_ENV} mode.`);
+  });
 });
 
 process.on('unhandledRejection', (err) => {
   logger.error('Unhandled rejection has occurred! Shutting down...', err);
-  server.close(() => {
-    process.exit(1);
-  });
+  process.exit(1);
 });
