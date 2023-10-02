@@ -9,7 +9,7 @@
     "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "eslint \"src/**/*.ts\" --fix --cache",
     "format": "prettier --write \"src/**/*.{ts,json}\"",
-    "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\""
+    "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx lint-staged\""
   },
   "lint-staged": {
     "src/**/*.{ts,json}": [
