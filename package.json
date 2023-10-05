@@ -1,7 +1,8 @@
 {
-  "name": "node-express-typescript",
+  "name": "node-express-ts-setup",
   "version": "1.0.0",
   "main": "src/server.ts",
+  "description": "A boilerplate setup for creating Node.js Express applications with TypeScript.",
   "scripts": {
     "build": "tsc",
     "start": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register dist/server.js",
@@ -50,5 +51,10 @@
   },
   "repository": "https://github.com/aryanmaurya314/node-express-typescript.git",
   "author": "Aryan Maurya <aryanmaurya314@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
 }
