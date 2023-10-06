@@ -1,8 +1,9 @@
 {
-  "name": "node-express-ts-setup",
+  "name": "@aryans_web/node-express-ts-mongo-setup",
   "version": "1.0.0",
   "main": "src/server.ts",
-  "description": "A boilerplate setup for creating Node.js Express applications with TypeScript.",
+  "description": "A boilerplate setup for creating Node.js Express MongoDB applications with TypeScript.",
+  "bin": "./bin/cli.js",
   "scripts": {
     "build": "tsc",
     "start": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register dist/server.js",
